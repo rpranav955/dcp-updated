@@ -321,7 +321,12 @@ def main():
             tgt_pcd = o3d.geometry.PointCloud()
             tgt_pcd.points = o3d.utility.Vector3dVector(tgt_raw.astype(np.float64))
             tgt_pcd.paint_uniform_color([0.15, 0.15, 0.15])  # gray = target
-            o3d.visualization.draw_geometries([src_pcd, tgt_pcd])
+            o3d.visualization.draw_geometries(
+                [src_pcd, tgt_pcd], 
+                window_name="DCP Registration Result",
+                width=1600, 
+                height=1200
+            )
 
 
 if __name__ == '__main__':
